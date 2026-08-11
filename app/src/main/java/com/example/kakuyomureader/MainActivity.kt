@@ -71,6 +71,18 @@ class MainActivity : ComponentActivity() {
         super.onStop()
     }
 
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == 101) {
+            val isGranted = grantResults.isNotEmpty() && grantResults[0] == android.content.pm.PackageManager.PERMISSION_GRANTED
+            AppLogger.d("MainActivity", "POST_NOTIFICATIONS 権限結果: granted=$isGranted")
+        }
+    }
+
     override fun onDestroy() {
         AppLogger.d("MainActivity", "onDestroy: メイン画面終了")
         super.onDestroy()

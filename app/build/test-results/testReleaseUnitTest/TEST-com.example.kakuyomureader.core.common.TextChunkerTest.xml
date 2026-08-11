@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.kakuyomureader.core.common.TextChunkerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-08-11T07:35:44" hostname="jiro-Diginnos-Series" time="0.006">
-  <properties/>
-  <testcase name="splitIntoChunks_splitsByPunctuation" classname="com.example.kakuyomureader.core.common.TextChunkerTest" time="0.005"/>
-  <testcase name="splitIntoChunks_shortTextReturnsSingleChunk" classname="com.example.kakuyomureader.core.common.TextChunkerTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

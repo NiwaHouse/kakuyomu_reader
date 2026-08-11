@@ -164,7 +164,15 @@ class NovelPlaybackService : Service(), TtsEventListener {
     private fun updateForegroundNotification(state: PlaybackState) {
         val text = _currentParagraphFlow.value?.shortPreview ?: ""
         val notification = notificationHelper.buildNotification(text, state, currentSpeed, mediaSession)
-        startForeground(MediaNotificationHelper.NOTIFICATION_ID, notification)
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
+            startForeground(
+                MediaNotificationHelper.NOTIFICATION_ID,
+                notification,
+                android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK
+            )
+        } else {
+            startForeground(MediaNotificationHelper.NOTIFICATION_ID, notification)
+        }
     }
 
     // TtsEventListener 実装

@@ -36,7 +36,7 @@ class KakuyomuReaderApp : Application() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = getString(R.string.notification_channel_name)
             val descriptionText = getString(R.string.notification_channel_desc)
-            val importance = NotificationManager.IMPORTANCE_LOW // 音を鳴らさず控えめに表示
+            val importance = NotificationManager.IMPORTANCE_DEFAULT // 通知パネルに確実に表示
             val channel = NotificationChannel(NOTIFICATION_CHANNEL_ID, name, importance).apply {
                 description = descriptionText
                 setShowBadge(false)

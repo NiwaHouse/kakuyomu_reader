@@ -91,12 +91,13 @@ class MediaNotificationHelper(private val context: Context) {
         val displayText = readingText.ifBlank { "待機中" }
 
         return NotificationCompat.Builder(context, KakuyomuReaderApp.NOTIFICATION_CHANNEL_ID)
-            .setSmallIcon(android.R.drawable.ic_btn_speak_now)
+            .setSmallIcon(R.mipmap.ic_launcher)
             .setContentTitle(title)
             .setContentText(displayText)
             .setContentIntent(contentIntent)
             .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
-            .setOngoing(isPlaying)
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setOngoing(isPlaying || playbackState == PlaybackState.PAUSED)
             .addAction(playPauseAction)
             .addAction(nextAction)
             .addAction(speedAction)
