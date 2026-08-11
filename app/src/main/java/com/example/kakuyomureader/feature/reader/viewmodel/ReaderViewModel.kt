@@ -280,15 +280,6 @@ class ReaderViewModel(
         changeSpeedUseCase(speed)
         repository.setPlaybackSpeed(speed.rate)
         _uiState.update { it.copy(playbackSpeed = speed) }
-
-        // 現在再生中かつ対象段落が存在する場合、新速度で即座に言い直し発話
-        if (_uiState.value.playbackState == PlaybackState.PLAYING) {
-            val current = _uiState.value.currentParagraph
-            if (current != null) {
-                AppLogger.d("ReaderViewModel", "再生中スピード変更検出: 新速度 ${speed.displayString} で即時再発話")
-                speakParagraphUseCase(current)
-            }
-        }
     }
 
     private fun requestNextParagraphFromWebView() {

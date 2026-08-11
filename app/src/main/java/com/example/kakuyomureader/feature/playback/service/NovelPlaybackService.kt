@@ -112,6 +112,15 @@ class NovelPlaybackService : Service(), TtsEventListener {
         currentSpeed = speed
         ttsEngine.setSpeechRate(speed)
         updateForegroundNotification(_playbackStateFlow.value)
+
+        // 現在再生中かつ対象段落が存在する場合、キューを保持したまま現在段落を新速度で即時言い直し発話
+        if (_playbackStateFlow.value == PlaybackState.PLAYING) {
+            val current = _currentParagraphFlow.value
+            if (current != null) {
+                AppLogger.d("NovelPlaybackService", "再生中スピード変更検出: 新速度 ${speed.displayString} で現在段落を言い直し再発話 (キュー保持: size=${paragraphQueue.size})")
+                playSingleParagraph(current)
+            }
+        }
     }
 
     private fun playNextInQueueOrRequest() {

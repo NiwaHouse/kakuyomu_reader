@@ -90,7 +90,7 @@
 | `OnTogglePlayPause` | なし | 再生/一時停止ボタンが押された | `playbackState` (PLAYING/PAUSED) |
 | `OnStartBackgroundPlayback`| なし | 「🎧 BG再生」ボタンが押された | フォアグラウンドサービス常駐起動・通知表示、アプリバックグラウンド移行 (`moveTaskToBack`), `playbackState` (PLAYING) |
 | `OnStopPlayback` | なし | 停止ボタンが押された | `playbackState` (STOPPED), `currentParagraph`, サービス/通知停止 |
-| `OnSpeedChanged` | `speed: PlaybackSpeed` | 速度変更スライダーが操作された | `playbackSpeed`（ページ遷移時も維持。再生中であれば現在段落を新速度で即時読み直し発話） |
+| `OnSpeedChanged` | `speed: PlaybackSpeed` | 速度変更スライダーが操作された | `playbackSpeed`（ページ遷移時も維持。再生中であれば残りの再生キューを保持したまま現在段落を新速度で即時言い直し連続再生） |
 | `OnToggleAutoPlayNext`| `enabled: Boolean` | 自動連続読み上げトグルが変更された | `isAutoPlayNext` |
 | `OnToggleDictionaryMode`| `enabled: Boolean` | 辞書登録モードトグルが変更された | `isDictionaryMode` |
 | `OnRegisterDictionaryClicked`| なし | 「➕ 登録」ボタンが押された | JS経由で選択文字列を取得要求 |
