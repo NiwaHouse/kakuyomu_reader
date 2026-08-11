@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">スピークブラウザ</string>
+    <string name="notification_channel_name">小説読み上げサービス</string>
+    <string name="notification_channel_desc">Web小説のバックグラウンド音声読み上げを制御します</string>
+    <string name="action_play">再生</string>
+    <string name="action_pause">一時停止</string>
+    <string name="action_stop">停止</string>
+    <string name="action_next">次の段落</string>
+    <string name="action_previous">前の段落</string>
+    <string name="status_idle">待機中 (段落をタップして再生)</string>
+    <string name="status_reading">読み上げ中: %1$s</string>
+    <string name="status_paused">一時停止中</string>
+    <string name="status_stopped">停止しました</string>
+</resources>

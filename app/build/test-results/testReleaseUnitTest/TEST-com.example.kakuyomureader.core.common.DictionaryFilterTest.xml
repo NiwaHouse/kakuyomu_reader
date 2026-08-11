@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.kakuyomureader.core.common.DictionaryFilterTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-08-11T07:35:43" hostname="jiro-Diginnos-Series" time="0.035">
+  <properties/>
+  <testcase name="applyDictionary_replacesSurfaceWithReading" classname="com.example.kakuyomureader.core.common.DictionaryFilterTest" time="0.033"/>
+  <testcase name="applyDictionary_prioritizesLongerSurfaces" classname="com.example.kakuyomureader.core.common.DictionaryFilterTest" time="0.0"/>
+  <testcase name="applyDictionary_returnsOriginalTextIfEmpty" classname="com.example.kakuyomureader.core.common.DictionaryFilterTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
